@@ -4,8 +4,10 @@
        apt:
           deb: https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+bionic_all.deb
             
-        - name: Upgrade zabbix agents
-          apt:
-             name: zabbix-agent
-             update-cache: yes
-             dpkg_options: 'force-confold,force-confdef'
+     - name: Upgrade zabbix agents
+       apt:
+          name: zabbix-agent
+          state: latest
+          update-cache: yes
+          dpkg_options: 'force-confold,force-confdef'
+          force_apt_get: yes

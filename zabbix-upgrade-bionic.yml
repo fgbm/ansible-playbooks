@@ -1,0 +1,11 @@
+-   hosts: ubuntu_18.04
+    tasks:
+        -   name: Install Zabbix repository
+            apt:
+                deb: https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+bionic_all.deb
+            
+        -   name: Upgrade zabbix agents
+            apt:
+                name: zabbix-agent
+                update-cache: yes
+                dpkg_options: 'force-confold,force-confdef'

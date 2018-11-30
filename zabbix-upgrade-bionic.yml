@@ -11,3 +11,4 @@
           update-cache: yes
           dpkg_options: 'force-confold,force-confdef'
           force_apt_get: yes
+          only_upgrade: yes

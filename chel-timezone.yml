@@ -1,0 +1,5 @@
+- hosts: chelyabinsk
+  tasks:
+    -name: Update timezone info
+    timezone:
+      name: Asia/Yekaterinburg

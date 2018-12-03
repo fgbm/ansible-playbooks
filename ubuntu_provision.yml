@@ -5,10 +5,12 @@
         name: "*"
         state: latest
         update_cache: yes
+        force_apt_get: true
 
     - name: Install useful packages
       apt:
         name: "{{ packages }}"
+        force_apt_get: true
       vars:
         packages:
           - vim

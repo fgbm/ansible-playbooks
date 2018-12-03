@@ -1,0 +1,33 @@
+- hosts: newbie
+  tasks:
+    - name: Upgrade all packages to the latest version
+      apt:
+        name: "*"
+        state: latest
+        update_cache: yes
+
+    - name: Install useful packages
+      apt:
+        name: {{ packages }}
+      vars:
+        packages:
+          - vim
+          - htop
+          - net-tools
+          - mc
+          - tmux
+          - pwgen
+          - 7z
+
+    - name: Install locales
+      locale_gen:
+        name: {{ locales }}
+        state: present
+      vars:
+        locales:
+          - ru_RU
+          - ru_RU.CP1251
+          - ru_RU.ISO88595
+          - ru_RU.KOI8R
+          - ru_RU.UTF-8
+          - russian
